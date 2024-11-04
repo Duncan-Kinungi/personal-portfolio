@@ -93,21 +93,27 @@
       </ul>
     </div>
     <!--copyright-->
-    <p class="copyright-text">
+   <p class="copyright-text">
   &copy;<span id="year"></span> Developed by Duncan Kinungi
-  <span id="time"></span>
+  <span id="time" style="font-family: 'Courier New', Courier, monospace; font-weight: bold;"></span>
 </p>
 
 <script>
   // Function to update the year and time
   function updateCopyright() {
     const year = new Date().getFullYear();
-    const currentTime = new Date().toLocaleString("en-KE", { timeZone: "Africa/Nairobi", timeStyle: "short" });
+    const currentTime = new Date().toLocaleTimeString("en-KE", { 
+      timeZone: "Africa/Nairobi", 
+      hour12: false,           // Use 24-hour format for digital clock style
+      hour: "2-digit", 
+      minute: "2-digit", 
+      second: "2-digit"
+    });
 
     // Set the year
     document.getElementById("year").textContent = year;
 
-    // Set the time
+    // Set the time with a digital clock style
     document.getElementById("time").textContent = ` | Current Time (EAT): ${currentTime}`;
   }
 
