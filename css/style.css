@@ -464,7 +464,7 @@ header .hamburger-btn span::after{
     font-size: 15px;
     color: var(--text-black-600);
     transform: translateY(-50%) rotate(-90deg);
-    left: -200px;
+    left: -230px;
 }
 /*Home section*/
 .home-section{
