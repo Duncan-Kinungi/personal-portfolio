@@ -93,7 +93,31 @@
       </ul>
     </div>
     <!--copyright-->
-    <p class="copyright-text">&copy;2021 Developed by Duncan Kinungi</p>
+    <p class="copyright-text">
+  &copy;<span id="year"></span> Developed by Duncan Kinungi
+  <span id="time"></span>
+</p>
+
+<script>
+  // Function to update the year and time
+  function updateCopyright() {
+    const year = new Date().getFullYear();
+    const currentTime = new Date().toLocaleString("en-KE", { timeZone: "Africa/Nairobi", timeStyle: "short" });
+
+    // Set the year
+    document.getElementById("year").textContent = year;
+
+    // Set the time
+    document.getElementById("time").textContent = ` | Current Time (EAT): ${currentTime}`;
+  }
+
+  // Update every second
+  setInterval(updateCopyright, 1000);
+
+  // Initial call to set the time immediately
+  updateCopyright();
+</script>
+
   </nav>
   <div class="fade-out-effect"></div>
   <!--navigation menu end-->
